@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import Search from './components/Search';
+import Users from './components/Users';
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Page2 from './components/Page2';
 
-function App() {
+
+function App(props) {
+  //declare component state
+
+  const [users, setUsers] = useState({ users: [] })
+
+
+  const fetchUsers = () => {
+    fetch("https://api.github.com/users")
+      .then(res => res.json())
+      .then(data => setUsers({ users: data }))
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+        <Route path="github-users" element={<Users users={users.users} fetch={fetchUsers} />} />
+        <Route path="page2" element={<Page2 />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
