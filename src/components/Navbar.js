@@ -13,7 +13,7 @@ function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
-                                <Link to="/github-users" className="nav-link">Github Users</Link>
+                                <Link to="/" className="nav-link">Github Users</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to="/page2" className="nav-link">Page 2</Link>

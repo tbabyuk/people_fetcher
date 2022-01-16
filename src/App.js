@@ -13,10 +13,10 @@ function App(props) {
   const [users, setUsers] = useState({ users: [] })
 
 
-  const fetchUsers = () => {
-    fetch("https://api.github.com/users")
+  const fetchUsers = text => {
+    fetch(`https://api.github.com/search/users?q=${text}`)
       .then(res => res.json())
-      .then(data => setUsers({ users: data }))
+      .then(data => setUsers({ users: data.items }))
   }
 
 
@@ -25,7 +25,7 @@ function App(props) {
       <div className="App">
         <Navbar />
         <Routes>
-        <Route path="github-users" element={<Users users={users.users} fetch={fetchUsers} />} />
+        <Route path="/" element={<Users users={users.users} fetch={fetchUsers} />} />
         <Route path="page2" element={<Page2 />} />
         </Routes>
       </div>

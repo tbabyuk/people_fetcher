@@ -1,10 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 function Search(props) {
+
+    const [text, setText] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        props.fetch(text)
+    }
+
+    const searchInput = (e) => {
+        setText(e.target.value)
+    }
+
     return (
         <div className="container my-5">
-            <input type="text" placeholder="User's Name" className="w-100"></input>
-            <button onClick={props.fetch} className="w-100 mt-3 btn btn-secondary">Search Github User</button>
+            <form onSubmit={(e) => handleSubmit(e)}>
+            <input type="text" value={text} onChange={(e) => searchInput(e)} placeholder="User's Name" className="w-100"></input>
+            <button type="submit" className="btn btn-secondary mt-3 w-100">Search Github User</button>
+            </form>
         </div>
     )
 }
