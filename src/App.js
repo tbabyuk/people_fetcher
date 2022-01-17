@@ -1,10 +1,11 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Search from './components/Search';
-import Users from './components/Users';
+import Users from './components/github/Users';
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Page2 from './components/Page2';
+import Astronauts from './components/astronauts/Astronauts';
 
 
 function App(props) {
@@ -20,13 +21,15 @@ function App(props) {
   }
 
 
+
+
   return (
     <Router>
       <div className="App">
         <Navbar />
         <Routes>
         <Route path="/" element={<Users users={users.users} fetch={fetchUsers} />} />
-        <Route path="page2" element={<Page2 />} />
+        <Route path="/astronauts" element={<Astronauts />} />
         </Routes>
       </div>
     </Router>

@@ -10,7 +10,7 @@ function User(props) {
                             <img src={user.avatar_url} className="card-img-top rounded-circle w-75 mx-auto" alt={user.login} />
                                 <div className="card-body">
                                     <h5 className="card-title text-center">{user.login}</h5>
-                                    <a href={user.html_url} target="_blank" className="btn btn-dark w-100">Read More</a>
+                                    <a href={user.html_url} target="_blank" className="btn btn-primary w-100">Read More</a>
                                 </div>
                         </div>
                     </div>

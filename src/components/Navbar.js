@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Navbar() {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-lg navbar-dark github-primary">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#"><i className="fas fa-users"></i> Github Finder</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,7 +16,7 @@ function Navbar() {
                                 <Link to="/" className="nav-link">Github Users</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/page2" className="nav-link">Page 2</Link>
+                                <Link to="/astronauts" className="nav-link">Astronauts</Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Page 3</a>

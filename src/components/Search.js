@@ -17,7 +17,7 @@ function Search(props) {
         <div className="container my-5">
             <form onSubmit={(e) => handleSubmit(e)}>
             <input type="text" value={text} onChange={(e) => searchInput(e)} placeholder="User's Name" className="w-100"></input>
-            <button type="submit" className="btn btn-secondary mt-3 w-100">Search Github User</button>
+            <button type="submit" className="btn btn-secondary mt-3 w-100">Search User</button>
             </form>
         </div>
     )
